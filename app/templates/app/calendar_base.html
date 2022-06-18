@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+
+{%  block title %}
+    {{ title }}
+{% endblock title %}
+
+
+
+{% block content %}
+
+    <h1>{{ title }}</h1>
+
+    <p>{% autoescape off %} {{ cal }}{% endautoescape %}</p>
+    {% include "app/announcements.html" %}
+{% endblock content %}
+

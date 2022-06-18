@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Site Template
+    {%  block title %}
+    {{ page_title|default:"untitled Page" }}
+    {% endblock title %}
+    </title>
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div id="wrapper">
+  <header id="header">
+      <div id="logo">
+          <img src="{% static 'logo.jpg' %}" alt="" />
+      </div>
+
+      <div id="top_menu">Home  |  Calendar  |  About  |  Fact Finder  |   Blog
+          <a href="/contact">Contact Us </a>
+      </div>
+
+
+
+  </header>
+
+<aside id="rightsidebar">
+
+    <nav id="nav">
+        <ul>
+            <li>Log In</li>
+            <li><a href="/add_place">Add Place</a> </li>
+            <li><a href="/list_subscribers">List Users</a> </li>
+        </ul>
+    </nav>
+</aside>
+
+<section id="main">
+   {% block content %}
+<p>Placeholder text in base template, replace with page content</p>
+{% endblock content %}
+
+</section>
+
+  <br>
+  <br>
+
+<footer id="footer">
+    Copyright &copy;
+    <script type="text/javascript">
+        document.write(new Date().getFullYear());
+    </script> Retirement Pickle
+</footer>
+  </div>
+
+
+</body>
+</html>

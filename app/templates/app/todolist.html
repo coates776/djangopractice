@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+{%  block title %}
+    Display todo list items
+{% endblock title %}
+
+
+
+{% block content %}
+
+    <h1>All todolist items in the database</h1>
+    <ul>
+
+
+
+    {% for todolist in all_todo_list %}
+    <li>{{ todolist.item }}</li>
+    <li>{{ todolist.manager }}</li>
+    <li>{{ todolist.place }}</li>
+    {% endfor %}
+    </ul>
+
+
+    <p>{% autoescape off %} {{ cal }}{% endautoescape %}</p>
+{% endblock content %}
